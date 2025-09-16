@@ -23,12 +23,12 @@ def move_right():
 
 def move_bottom_first():
     print("Moving bottom")
-    for x in range(20, 780, 1):
+    for x in range(400, 780, 1):
         draw_boy(x, 90)
 
 def move_bottom_last():
     print("Moving bottom")
-    for x in range(20, 780, 1):
+    for x in range(20, 400, 1):
         draw_boy(x, 90)
 
 def move_left():
@@ -58,15 +58,46 @@ def move_circle():
         draw_boy(x, y)
 
 
+def move_triangle_bottom_first():
+    for x in range(400, 650, 1):
+        draw_boy(x, 90)
+
+
+def move_triangle_right():
+    for t in range(0, 101):
+        x = 650 + (-250) * t / 100
+        y = 90 + (500 * math.sqrt(3) / 2) * t / 100
+        draw_boy(x, y)
+
+
+def move_triangle_left():
+    for t in range(0, 101):
+        x = 400 + (-250) * t / 100
+        y = 90 + 500 * math.sqrt(3) / 2 * (1 - t / 100)
+        draw_boy(x, y)
+
+def move_triangle_bottom_last():
+    for x in range(150, 400, 1):
+        draw_boy(x, 90)
+
 def move_triangle():
     print("Moving triangle")
-
+    move_triangle_bottom_first()
+    move_triangle_right()
+    move_triangle_left()
+    move_triangle_bottom_last()
 
 
 
 while True:
-    #move_circle()
-    #move_rectangle()
+    move_circle()
+    move_rectangle()
     move_triangle()
     break
 close_canvas()
+
+
+
+
+
+
