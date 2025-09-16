@@ -4,20 +4,28 @@ open_canvas()
 boy = load_image('character.png')
 grass = load_image('grass.png')
 
+def draw_boy(x: float, y: float):
+    clear_canvas_now()
+    boy.draw_now(x, y)
+    delay(0.1)
+
 
 def move_top():
+    print("Moving top")
+    for x in range(0, 800, 10):
+        draw_boy(x, 550)
     pass
-
-
-def move_left():
-    pass
-
-
-def move_bottom():
-    pass
-
 
 def move_right():
+    print("Moving right")
+    pass
+
+def move_bottom():
+    print("Moving bottom")
+    pass
+
+def move_left():
+    print("Moving left")
     pass
 
 
@@ -39,15 +47,13 @@ def move_circle():
         x = 400 + r * math.cos(math.radians(deg))
         y = 300 + r * math.sin(math.radians(deg))
 
-        clear_canvas_now()
-        boy.draw_now(x,y)
-        delay(0.1)
+        draw_boy(x, y)
     pass
 
 
 while True:
     move_circle()
     move_rectangle()
-    # break
+    break
     pass
 close_canvas()
