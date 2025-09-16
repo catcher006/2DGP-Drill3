@@ -12,33 +12,27 @@ def draw_boy(x: float, y: float):
 
 
 def move_top():
-    print("Moving top")
     for x in range(780, 20, -1):
         draw_boy(x, 550)
 
 def move_right():
-    print("Moving right")
     for y in range(90, 560, 1):
         draw_boy(780, y)
 
 def move_bottom_first():
-    print("Moving bottom")
     for x in range(400, 780, 1):
         draw_boy(x, 90)
 
 def move_bottom_last():
-    print("Moving bottom")
     for x in range(20, 400, 1):
         draw_boy(x, 90)
 
 def move_left():
-    print("Moving left")
     for y in range(560, 90, -1):
         draw_boy(20, y)
 
 
 def move_rectangle():
-    print("Moving rectangle")
     move_bottom_first()
     move_right()
     move_top()
@@ -47,13 +41,11 @@ def move_rectangle():
 
 
 def move_circle():
-    print("Moving circle")
-
     r = 200
 
     for deg in range(0, 360, 1):
         x = 400 + r * math.cos(math.radians(deg) - math.radians(90))
-        y = 300 + r * math.sin(math.radians(deg) - math.radians(90))
+        y = 290 + r * math.sin(math.radians(deg) - math.radians(90))
 
         draw_boy(x, y)
 
@@ -81,7 +73,6 @@ def move_triangle_bottom_last():
         draw_boy(x, 90)
 
 def move_triangle():
-    print("Moving triangle")
     move_triangle_bottom_first()
     move_triangle_right()
     move_triangle_left()
