@@ -1,3 +1,4 @@
+# 2022184020 서성호
 from pico2d import *
 
 open_canvas()
